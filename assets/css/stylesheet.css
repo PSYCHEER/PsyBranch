@@ -48,15 +48,23 @@ body {
 }
 
 .buttons {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .buttons-inline {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px; /* Add gap between buttons */
     padding: 0; /* Remove padding from sides */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 10px; /* Add gap between buttons */
+    justify-content: center; /* Center the grid */
 }
 
 .buttons-inline .button {
