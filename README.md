@@ -3,4 +3,6 @@
 
  [Demo site](https://psybranch.crafttale.eu)
 ---
-![{9E72272D-1E9F-4921-860F-6951D43FCB3B}](https://github.com/user-attachments/assets/352ff3c1-5879-4f81-ab9c-e6183903cd13)
+![showcase](https://github.com/user-attachments/assets/cb03d32b-d146-4b2f-9bc2-fe8924be184a)
+
+
