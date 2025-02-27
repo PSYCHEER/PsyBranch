@@ -307,3 +307,16 @@ body {
 .pop-out-delay-16 {
     animation-delay: 3.2s;
 }
+
+.cat-delay-1 {
+    animation-delay: 0.2s;
+}
+.cat-delay-2 {
+    animation-delay: 0.8s;
+}
+.cat-delay-3 {
+    animation-delay: 1.2s;
+}
+.cat-delay-4 {
+    animation-delay: 1.8s;
+}

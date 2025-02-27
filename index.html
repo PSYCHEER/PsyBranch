@@ -127,32 +127,41 @@
         </div>
 
         <script>
-            let animation = true; // Set this to false to disable animation
+          let animation = true; // Set this to false to disable animation
 
-            if (animation) {
-                document.addEventListener("DOMContentLoaded", function () {
-                    const elements = [
-                        document.querySelector(".logo img"),
-                        document.querySelector(".site-title h1")
-                    ];
+          if (animation) {
+            document.addEventListener("DOMContentLoaded", function () {
+              const elements = [
+                document.querySelector(".logo img"),
+                document.querySelector(".site-title h1"),
+              ];
 
-                    elements.forEach((element, index) => {
-                        element.classList.add("pop-out", `pop-out-delay-${index + 1}`);
-                    });
+              elements.forEach((element, index) => {
+                element.classList.add("pop-out", `pop-out-delay-${index + 1}`);
+              });
 
-                    const buttons = [
-                        ...document.querySelectorAll(".button"),
-                        ...document.querySelectorAll(".footer")
-                    ];
+              const categories = [...document.querySelectorAll(".category h6")];
 
-                    buttons.forEach((button, index) => {
-                        button.classList.add(
-                            "pop-out",
-                            `pop-out-delay-${elements.length + index + 1}`
-                        );
-                    });
-                });
-            }
+              categories.forEach((category, index) => {
+                category.classList.add(
+                  "pop-out",
+                  `cat-delay-${index + 1}`
+                );
+              });
+
+              const buttons = [
+                ...document.querySelectorAll(".button"),
+                ...document.querySelectorAll(".footer"),
+              ];
+
+              buttons.forEach((button, index) => {
+                button.classList.add(
+                  "pop-out",
+                  `pop-out-delay-${index + 1}`
+                );
+              });
+            });
+          }
         </script>
       </div>
     </div>
