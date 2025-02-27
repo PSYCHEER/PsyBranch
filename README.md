@@ -7,8 +7,14 @@
 
 Configuration
 ---
-Change link, button titles, icons.
+Change links, button titles, icons.
+
 Disable animation just by setting `let animation = true` to `let animation = false`.
-Year at copyright is automatic.
+
+Year at copyright is automatic.\
+\
+Images are in `assets/images`.
+
+Change logo and favicon!
 
 
