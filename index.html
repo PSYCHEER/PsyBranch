@@ -51,8 +51,6 @@
                 <i class="fab fa-patreon"></i> Patreon
               </a>
             </div>
-          </div>
-          <div class="buttons">
             <div class="button">
               <a
                 href="https://www.paypal.com/donate/?hosted_button_id=FVPRKVYBWDPSQ"
@@ -60,8 +58,6 @@
                 <i class="fab fa-paypal"></i> Paypal
               </a>
             </div>
-          </div>
-          <div class="buttons">
             <div class="button">
               <a href="https://ko-fi.com/psycheer">
                 <i class="fa-solid fa-mug-saucer"></i> Ko-fi
@@ -71,11 +67,12 @@
         </div>
         <div class="category">
           <h6>Partners</h6>
-          <div class="button">
-            <a href="https://discord.gg/xb3K5C6Ea2">
-              <i class="fas fa-crown"></i> NovaBot | Discord
-            </a>
-          </div>
+          <div class="buttons">
+            <div class="button">
+              <a href="https://discord.gg/xb3K5C6Ea2">
+                <i class="fas fa-crown"></i> NovaBot | Discord
+              </a>
+            </div>
             <div class="button">
               <a href="https://discord.gg/Zg5Z8N6GqN">
                 <i class="fas fa-cube"></i> ItemsAdder | Discord
@@ -86,6 +83,7 @@
                 <i class="fas fa-user-tie"></i> Sk8tingDuck | Discord
               </a>
             </div>
+          </div>
         </div>
         <div class="category">
           <h6>My Socials</h6>
@@ -106,30 +104,55 @@
                   <i class="fab fa-discord"></i> psycheer
                 </a>
               </div>
-          </div>
-          <div class="grid">
-            <div class="buttons buttons-inline">
-              <div class="button">
-                <a href="https://www.youtube.com/@impsycheer">
-                  <i class="fab fa-youtube"></i> YouTube
-                </a>
+            </div>
+            <div class="grid">
+              <div class="buttons buttons-inline">
+                <div class="button">
+                  <a href="https://www.youtube.com/@impsycheer">
+                    <i class="fab fa-youtube"></i> YouTube
+                  </a>
+                </div>
               </div>
+            </div>
+          </div>
+
+          <div class="footer">
+            <p>&copy; <span id="year"></span> PSYCHEER. All rights reserved.</p>
+            <p>
+              <a href="https://crafttale.eu"
+                >Visit my Minecraft website | CraftTale.eu</a
+              >
+            </p>
           </div>
         </div>
-      </div>
 
-      <div class="footer">
-        <p>&copy; <span id="year"></span> PSYCHEER. All rights reserved.</p>
-        <p>
-          <a href="https://crafttale.eu"
-            >Visit my Minecraft website | CraftTale.eu</a
-          >
-        </p>
+        <script>
+          document.getElementById("year").textContent =
+            new Date().getFullYear();
+          document.addEventListener("DOMContentLoaded", function () {
+            const elements = [
+              document.querySelector(".logo img"),
+              document.querySelector(".site-title h1")
+            ];
+
+            elements.forEach((element, index) => {
+              element.classList.add("pop-out", `pop-out-delay-${index + 1}`);
+            });
+
+            const buttons = [
+              ...document.querySelectorAll(" .button"),
+              ...document.querySelectorAll(" .footer")
+            ];
+
+            buttons.forEach((button, index) => {
+              button.classList.add(
+                "pop-out",
+                `pop-out-delay-${elements.length + index + 1}`
+              );
+            });
+          });
+        </script>
       </div>
     </div>
-
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
   </body>
 </html>
