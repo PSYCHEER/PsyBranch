@@ -1,322 +1,259 @@
-body {
-    font-family: Arial, sans-serif;
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #00d4ff;
+    --accent-color: #ff6b6b;
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --bg-card: #2a2a2a;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --border-radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
     margin: 0;
     padding: 0;
-    background-color: #121212;
-    color: #e0e0e0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
 }
 
 .container {
-    max-width: 600px;
+    max-width: 480px;
     margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-    background-color: #1e1e1e;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+    gap: 20px;
+    margin-bottom: 15px;
 }
 
 .logo img {
-    max-width: 50px;
-    height: auto;
-    margin-right: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 0;
+    transition: var(--transition);
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 123, 255, 0.5);
 }
 
 .site-title h1 {
-    font-size: 2em;
-    color: #ffffff;
-    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0;
 }
 
-.title h1 {
-    font-size: 2.5em;
-    color: #ffffff;
-    margin-bottom: 10px;
+.tagline {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    opacity: 0.8;
 }
 
-.title h6 {
-    font-size: 1.2em;
-    color: #bbbbbb;
-    margin-bottom: 20px;
+.categories {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.category {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    padding: 20px 20px 20px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    overflow: visible;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.category.featured {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+}
+
+.category h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+    text-align: center;
+    font-weight: 600;
 }
 
 .buttons {
-    margin-top: 10px;
-}
-
-.buttons-inline {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px; /* Add gap between buttons */
-    padding: 0; /* Remove padding from sides */
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 10px; /* Add gap between buttons */
-    justify-content: center; /* Center the grid */
-}
-
-.buttons-inline .button {
-    margin: 0; /* Remove margin from buttons */
-}
-
-.buttons-inline .button a {
-    display: inline-block;
-    width: auto;
-    max-width: 150px;
-    padding: 10px 15px;
-    font-size: 1em;
-    white-space: nowrap; /* Prevent text from wrapping */
-    text-align: center; /* Center text */
-    background: linear-gradient(45deg, #007bff, #00d4ff); /* Gradient from blue to cyan */
-    color: #ffffff; /* White text */
-    border-radius: 5px;
-    text-decoration: none;
-    transition: transform 0.3s;
-    background-size: 200% 200%;
-    animation: gradientAnimation 3s ease infinite;
-}
-
-.buttons-inline .button a:hover {
-    transform: scale(1.05);
-    animation: gradientAnimationHover 1s ease infinite;
-}
-
-.buttons-inline .button a:active {
-    transform: scale(1);
+    flex-direction: column;
+    gap: 6px;
 }
 
 .button {
-    margin: 10px 0;
+    position: relative;
+    overflow: visible; 
+    margin: 3px 0;
 }
 
 .button a {
-    display: inline-block;
-    width: 100%;
-    max-width: 300px;
-    padding: 15px 25px;
-    font-size: 1.2em;
-    color: #ffffff;
-    background: linear-gradient(45deg, #007bff, #00d4ff); /* Gradient from blue to cyan */
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 24px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-primary);
     text-decoration: none;
-    transition: transform 0.3s;
-    background-size: 200% 200%;
-    animation: gradientAnimation 3s ease infinite;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+    z-index: 1;
+}
+
+.button.primary a {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    font-weight: 600;
+}
+
+.button.support a {
+    background: linear-gradient(45deg, var(--accent-color), #ff8a8a);
 }
 
 .button a:hover {
-    transform: scale(1.05);
-    animation: gradientAnimationHover 1s ease infinite;
+    transform: translateY(-3px); /* Zmenšený z -2px na -3px pre lepší efekt */
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
 }
 
 .button a:active {
-    transform: scale(1);
+    transform: translateY(0);
+}
+
+.button a i {
+    font-size: 1.2rem;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button.social a {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    padding: 14px;
+}
+
+.button.social a span {
+    display: none;
 }
 
 .footer {
-    margin-top: 30px;
-    font-size: 0.9em;
-    color: #bbbbbb;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 .footer a {
-    color: #007bff;
+    color: var(--primary-color);
     text-decoration: none;
-    background: linear-gradient(45deg, #007bff, #00d4ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: background-position 0.5s;
-    background-size: 200% 200%;
+    transition: var(--transition);
 }
 
 .footer a:hover {
-    background-position: 100% 0;
+    color: var(--secondary-color);
     text-decoration: underline;
 }
 
-/* Gradient animation */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@keyframes gradientAnimationHover {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
+.pop-out {
+    animation: slideUp 0.6s ease forwards;
+    opacity: 0;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .container {
-        max-width: 80%;
-        padding: 15px;
-    }
-
-    .title h1 {
-        font-size: 2.2em;
-    }
-
-    .title h6 {
-        font-size: 1.1em;
-    }
-
-    .button a {
-        font-size: 1.1em;
-        padding: 14px 22px;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        max-width: 90%;
-        padding: 15px;
-    }
-
-    .title h1 {
-        font-size: 2em;
-    }
-
-    .title h6 {
-        font-size: 1em;
-    }
-
-    .button a {
-        font-size: 1em;
-        padding: 12px 20px;
-    }
-}
+.pop-out-delay-1 { animation-delay: 0.1s; }
+.pop-out-delay-2 { animation-delay: 0.2s; }
+.pop-out-delay-3 { animation-delay: 0.3s; }
+.pop-out-delay-4 { animation-delay: 0.4s; }
+.pop-out-delay-5 { animation-delay: 0.5s; }
 
 @media (max-width: 480px) {
     .container {
-        max-width: 95%;
-        padding: 10px;
+        padding: 12px;
     }
-
-    .title h1 {
-        font-size: 1.5em;
+    
+    .title-container {
+        gap: 15px; /* Zmenšené na mobile */
     }
-
-    .title h6 {
-        font-size: 0.9em;
+    
+    .logo img {
+        width: 50px; /* Ešte menšie na mobile */
+        height: 50px;
     }
-
-    .button a {
-        font-size: 0.9em;
-        padding: 10px 15px;
+    
+    .site-title h1 {
+        font-size: 2rem;
     }
-}
-
-/* Keyframes for pop-out animation */
-@keyframes popOut {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
+    
+    .category {
+        padding: 16px;
     }
-    100% {
-        opacity: 1;
-        transform: scale(1);
+    
+    .header {
+        margin-bottom: 20px;
+        padding: 15px 0;
     }
-}
-
-/* Initial state for animation */
-.pop-out {
-    opacity: 0;
-    transform: scale(0.5);
-    animation: popOut 0.5s forwards;
-}
-
-/* Delays for button animation */
-.pop-out-delay-1 {
-    animation-delay: 0.2s;
-}
-
-.pop-out-delay-2 {
-    animation-delay: 0.4s;
-}
-
-.pop-out-delay-3 {
-    animation-delay: 0.6s;
-}
-
-.pop-out-delay-4 {
-    animation-delay: 0.8s;
-}
-
-.pop-out-delay-5 {
-    animation-delay: 1s;
-}
-
-/* Add more delays if needed */
-.pop-out-delay-6 {
-    animation-delay: 1.2s;
-}
-
-.pop-out-delay-7 {
-    animation-delay: 1.4s;
-}
-
-.pop-out-delay-8 {
-    animation-delay: 1.6s;
-}
-
-.pop-out-delay-9 {
-    animation-delay: 1.8s;
-}
-
-.pop-out-delay-10 {
-    animation-delay: 2s;
-}
-.pop-out-delay-11 {
-    animation-delay: 2.2s;
-}
-.pop-out-delay-12 {
-    animation-delay: 2.4s;
-}
-.pop-out-delay-13 {
-    animation-delay: 2.6s;
-}
-.pop-out-delay-14 {
-    animation-delay: 2.8s;
-}
-.pop-out-delay-15 {
-    animation-delay: 3s;
-}
-.pop-out-delay-16 {
-    animation-delay: 3.2s;
-}
-
-.cat-delay-1 {
-    animation-delay: 0.2s;
-}
-.cat-delay-2 {
-    animation-delay: 0.9s;
-}
-.cat-delay-3 {
-    animation-delay: 1.6s;
-}
-.cat-delay-4 {
-    animation-delay: 2.1s;
+    
+    .categories {
+        gap: 16px;
+    }
+    
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
